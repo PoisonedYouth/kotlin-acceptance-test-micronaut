@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: kotlinAcceptanceTestMicronaut
+datasources:
+  default:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    db-type: mysql
+    jdbc-url: jdbc:mysql://localhost:5432/db
+    username: root
+    password: password
+jpa:
+  default:
+    entity-scan:
+      packages: 'com.poisonedyouth'
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+        show_sql: true
+liquibase:
+  datasources:
+    default:
+      change-log: 'classpath:db/changelog.sql'
